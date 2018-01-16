@@ -3,13 +3,14 @@ package ru.tinkoff.autotests.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.tinkoff.autotests.util.TestProperties;
-import ru.yandex.qatools.allure.annotations.Attachment;
+
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;

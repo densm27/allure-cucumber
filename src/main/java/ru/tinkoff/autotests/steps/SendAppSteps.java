@@ -1,8 +1,9 @@
 package ru.tinkoff.autotests.steps;
 
 
+import io.qameta.allure.Step;
 import ru.tinkoff.autotests.pages.SendAppPage;
-import ru.yandex.qatools.allure.annotations.Step;
+
 
 import java.util.HashMap;
 
@@ -13,24 +14,24 @@ import static org.junit.Assert.assertTrue;
  */
 public class SendAppSteps {
 
-    @Step("поле {0} заполняется значением {1}")
+    @Step("поле {field} заполняется значением {value}")
     public void fillField(String field, String value){
         new SendAppPage().fillField(field, value);
     }
 
-    @Step("поле {0} заполнено значением {1}")
+    @Step("поле {field} заполнено значением {value}")
     public void checkFillField(String field, String value){
         String actual = new SendAppPage().getFillField(field);
         assertTrue(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
                 actual.equals(value));
     }
 
-    @Step("в поле {0} присутствует сообщение об ошибке {1}")
+    @Step("в поле {field} присутствует сообщение об ошибке {value}")
     public void checkErrorMessageField(String field, String value){
         new SendAppPage().checkFieldErrorMessage(field, value);
     }
 
-    @Step("заголовок страницы - Отправить заявку равен {0}")
+    @Step("заголовок страницы - Отправить заявку равен {expectedTitle}")
     public void checkPageTitle(String expectedTitle){
         String actualTitle = new SendAppPage().title.getText();
         assertTrue(String.format("Заголовок равен [%s]. Ожидалось - [%s]",
