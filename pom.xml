@@ -46,7 +46,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>**/ru.tinkoff.autotests.CucumberRunner.java</include>
+                        <include>**/CucumberRunner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>

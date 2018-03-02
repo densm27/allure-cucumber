@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ru.tinkoff.autotests.steps.BaseSteps;
 
+import java.util.List;
+
 
 /**
  * Created by Maria on 29.04.2017.
@@ -14,22 +16,22 @@ import ru.tinkoff.autotests.steps.BaseSteps;
 public class MainPage extends BasePageObject{
 
 
-    @FindBy(xpath = "//ol[contains(@class,'rgs-menu pull-left')]")
-    WebElement menuItems;
+    @FindBy(xpath = "//ol[contains(@class,'rgs-menu pull-left')]//li[contains(@class,'current')]")
+    List<WebElement> menuItems;
 
-    @FindBy(xpath = "//div[contains(@class,'grid rgs-main-menu')]")
-    WebElement menuInsurance;
+    @FindBy(xpath = "//div[contains(@class,'grid rgs-main-menu')]//li[contains(@class,'line3-link')]")
+    List<WebElement> menuInsurance;
 
     public MainPage(){
         PageFactory.initElements(BaseSteps.getDriver(), this);
     }
 
     public void selectMenuItem(String itemName){
-        menuItems.findElement(By.xpath(".//li[contains(@class,'current')]/*[contains(text(),'"+itemName+"')]")).click();
+        selectCollectionItem(itemName, menuItems);
     }
 
     public void selectInsuranceItem(String itemName){
-        menuInsurance.findElement(By.xpath(".//li[contains(@class,'line3-link')]//a[contains(text(),'"+itemName+"')]")).click();
+        selectCollectionItem(itemName, menuInsurance);
     }
 }
 
