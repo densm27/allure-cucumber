@@ -1,6 +1,7 @@
 package ru.tinkoff.autotests.pages;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import ru.tinkoff.autotests.steps.BaseSteps;
@@ -29,6 +30,7 @@ public class BasePageObject  {
                 return;
             }
         }
+        Assert.fail("Не найден элмент коллеции - " + itemName);
     }
 
 }
