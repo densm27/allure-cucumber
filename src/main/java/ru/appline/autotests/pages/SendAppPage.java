@@ -65,6 +65,7 @@ public class SendAppPage extends BasePageObject {
                 fillField(middleName, value);
                 break;
             case  "Телефон":
+                fillField(phone,"");
                 fillField(phone, value);
                 break;
             case  "Регион":
